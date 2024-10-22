@@ -1,1 +1,144 @@
-/* You can add global styles to this file, and also import other style files */
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+:root {
+  --color-background: #837391;
+  --color-primary: #D8D1C0;
+  --color-secondary: #A99378;
+  --color-tertiary: #272728;
+  --color-shadow: #695C74;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*::after, *::before { content: ""; }
+body {
+    background: url("https://www.baltana.com/files/wallpapers-4/Halloween-Background-HQ-Wallpaper-14399.jpg");
+    background-size: cover;
+    opacity: 1;
+    font-family: "Popins", sans-serif;
+
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.main-container {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes spin {
+    0% {
+      --rotate: 0deg;
+    }
+    100% {
+      --rotate: 360deg;
+    }
+  }
+
+  .custom-btn {
+    width: 130px;
+    height: 40px;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px 25px;
+    font-weight: 500;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+     box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+     7px 7px 20px 0px rgba(0,0,0,.1),
+     4px 4px 5px 0px rgba(0,0,0,.1);
+    outline: none;
+  }
+
+  .btn-1 {
+    background: rgb(15, 25, 29);
+  background: linear-gradient(0deg, rgb(9, 24, 30) 0%, rgb(25, 31, 38) 100%);
+    width: 130px;
+    height: 40px;
+    line-height: 42px;
+    padding: 0;
+    border: none;
+    
+  }
+  .btn-1 span {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  .btn-1:before,
+  .btn-1:after {
+    position: absolute;
+    content: "";
+    right: 0;
+    top: 0;
+     background: rgb(12, 14, 15);
+    transition: all 0.3s ease;
+  }
+  .btn-1:before {
+    height: 0%;
+    width: 2px;
+  }
+  .btn-1:after {
+    width: 0%;
+    height: 2px;
+  }
+  .btn-1:hover{
+     background: transparent;
+    box-shadow: none;
+  }
+  .btn-1:hover:before {
+    height: 100%;
+  }
+  .btn-1:hover:after {
+    width: 100%;
+  }
+  .btn-1 span:hover{
+     color: rgb(21, 26, 31);
+  }
+  .btn-1 span:before,
+  .btn-1 span:after {
+    position: absolute;
+    content: "";
+    left: 0;
+    bottom: 0;
+     background: rgb(34, 36, 37);
+    transition: all 0.3s ease;
+  }
+  .btn-1 span:before {
+    width: 2px;
+    height: 0%;
+  }
+  .btn-1 span:after {
+    width: 0%;
+    height: 2px;
+  }
+  .btn-1 span:hover:before {
+    height: 100%;
+  }
+  .btn-1 span:hover:after {
+    width: 100%;
+  }
+  .btn-custom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 2rem;
+}

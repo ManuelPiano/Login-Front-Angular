@@ -1,0 +1,165 @@
+
+$xs : 12px;
+$s : 14px;
+$l : 18px;
+$xl : 24px;
+$primary-color: #f6b900;
+$secondary-color: #6c757d;
+$success-color: #28a745;
+$white: #fff;
+@property --rotate {
+    syntax: "<angle>";
+    initial-value: 132deg;
+    inherits: false;
+  }
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
+}
+.card-container {
+    width: 30rem;
+    height: 550px;
+    background-color: $white;
+    @include border-radius(40px);
+    box-shadow: inset 20px 20px 60px #d9d9d9, inset -20px -20px 60px #ffffff;
+    margin: 1rem auto;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+
+    @media (max-width: 768px) {
+        width: 80%;
+        max-width: 25rem;
+    }
+
+    @media (max-width: 576px) {
+        width: 90%;
+        max-width: 20rem;
+        font-size: $s;
+    }
+}
+
+@media (max-width: 576px) {
+    h1 {
+        font-size: $xl;
+    }
+    label {
+        font-size: $xs;
+    }
+    input {
+        font-size: $s;
+    }
+}
+.card-container, .container, #user, #pass {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 2rem;
+}
+#user label, #pass label {
+    margin-bottom: 0.5rem;
+    font-size: $l;
+}
+
+#user input, #pass input {
+    width: 100%;
+    height: 2rem;
+    border: 1px solid #ced4da;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+input:focus {
+    outline: none;
+    border: 1px solid $primary-color;
+    box-shadow: 0 0 10px $primary-color;
+}
+  .card {
+    padding: 3px;
+    position: relative;
+    border-radius: 6px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    font-size: 1.5em;
+  }
+  
+  
+  .card::before {
+    content: "";
+    width: 104%;
+    height: 102%;
+    border-radius: 2px;
+    background-image: linear-gradient(
+        var(--rotate)
+        , #f6b900, #f79c00 43%, #14101a);
+      position: absolute;
+      z-index: -1;
+      top: -1%;
+      left: -2%;
+      animation: spin 2.5s linear infinite;
+  }
+  
+  .card::after {
+    position: absolute;
+    top: calc(var(--card-height) / 2);
+    left: 0;
+    right: 0;
+    z-index: -1;
+    height: 104%;
+    width: 104%;
+    margin: 0 auto;
+    
+    filter: blur(calc(var(--card-height) / 6));
+    background-image: linear-gradient(
+      var(--rotate)
+      , #666869, #2b2b2b 43%, #4e00c2);
+      opacity: 1;
+    transition: opacity .5s;
+    animation: spin 2.5s linear infinite;
+  }
+
+  .loader{
+    margin: 0 0 2em;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    text-align: center;
+    padding: 1em;
+    margin: 0 auto 1em;
+    display: inline-block;
+    vertical-align: top;
+  }
+  
+
+  svg path,
+  svg rect{
+    fill: #FF6700;
+  }
+
+  .loader-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8); /* Fondo negro con opacidad */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
+}
+.content {
+  opacity: 0;
+  transition: opacity 2s ease-in;
+}
+
+.content.fade-in {
+  opacity: 1;
+}
